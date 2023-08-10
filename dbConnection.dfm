@@ -95,50 +95,11 @@ object dbForm: TdbForm
   object getEmployeeFilterQ: TOracleQuery
     SQL.Strings = (
       
-        'select * from employee  where (:id=-1 and :department='#39'None'#39' and' +
-        ' firstname = :firstname and lastname= :lastname) or'
-      
-        '(:firstname='#39'None'#39' and :lastname='#39'None'#39' and :department='#39'None'#39' a' +
-        'nd id=(:id)) or'
-      
-        '(:id=-1 and :lastname='#39'None'#39' and :department='#39'None'#39' and firstnam' +
-        'e=:firstname) or'
-      
-        '(:id=-1 and :firstname='#39'None'#39' and :department='#39'None'#39' and lastnam' +
-        'e=:lastname) or'
-      
-        '(:id=-1 and :firstname='#39'None'#39' and :lastname='#39'None'#39' and departmen' +
-        't=:department) or'
-      
-        '(:lastname='#39'None'#39' and :department='#39'None'#39' and id=(:id) and firstn' +
-        'ame=:firstname) or'
-      
-        '(:department='#39'None'#39' and id=(:id) and firstname=:firstname and la' +
-        'stname=:lastname) or'
-      
-        '(id=(:id) and firstname=:firstname and lastname=:lastname and de' +
-        'partment=:department) or'
-      
-        '(:id=-1 and firstname=:firstname and lastname=:lastname and depa' +
-        'rtment=:department) or'
-      
-        '(:id=-1 and :firstname='#39'None'#39' and lastname=:lastname and departm' +
-        'ent=:department) or'
-      
-        '(id=(:id) and :firstname='#39'None'#39' and lastname=:lastname and :depa' +
-        'rtment='#39'None'#39') or'
-      
-        '(id=(:id) and :firstname='#39'None'#39' and :lastname='#39'None'#39' and departm' +
-        'ent=:department) or'
-      
-        '(id=(:id) and :firstname='#39'None'#39' and lastname=:lastname and depar' +
-        'tment=:department) or'
-      
-        '(:id=-1 and firstname=:firstname and :lastname='#39'None'#39' and depart' +
-        'ment=:department) or'
-      
-        '(id=(:id) and firstname=:firstname and :lastname='#39'None'#39' and depa' +
-        'rtment=:department)'
+        'select *'#10'  from employee t'#10' where (:id = -1 or t.id = :id)'#10'  and' +
+        ' (:department = '#39'None'#39' or t.department LIKE '#39'%'#39' || :department |' +
+        '| '#39'%'#39') and (:firstname='#39'None'#39' or firstname LIKE '#39'%'#39' || :firstnam' +
+        'e || '#39'%'#39') and (:lastname='#39'None'#39' or lastname LIKE '#39'%'#39' || :lastnam' +
+        'e || '#39'%'#39')'
       ''
       ''
       ''

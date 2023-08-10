@@ -1,7 +1,7 @@
 object editRequestForm: TeditRequestForm
   Left = 0
   Top = 0
-  Caption = 'editRequestForm'
+  Caption = 'Edit Request Form'
   ClientHeight = 442
   ClientWidth = 628
   Color = clBtnFace
@@ -56,6 +56,7 @@ object editRequestForm: TeditRequestForm
   object editStartDatePicker: TDatePicker
     Left = 408
     Top = 104
+    Height = 41
     Date = 45119.000000000000000000
     DateFormat = 'dd/mm/yyyy'
     Font.Charset = DEFAULT_CHARSET
@@ -68,6 +69,7 @@ object editRequestForm: TeditRequestForm
   object editEndDatePicker: TDatePicker
     Left = 408
     Top = 160
+    Height = 41
     Date = 45119.000000000000000000
     DateFormat = 'dd/mm/yyyy'
     Font.Charset = DEFAULT_CHARSET

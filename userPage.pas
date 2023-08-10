@@ -84,16 +84,30 @@ end;
 
 
   procedure TuserForm.exportBtnClick(Sender: TObject);
+    var saveDialog : TSaveDialog;
   begin
-       if ExportToExcel(employeesTable,'Employees.csv') then//It is saving in project folder win32 release
+       saveDialog := TSaveDialog.Create(self);
+       saveDialog.Title := 'Save your csv or excel file';
+       saveDialog.InitialDir := GetCurrentDir;
+       saveDialog.Filter := 'Csv file|*.csv|Word file|*.doc';
+       saveDialog.DefaultExt := 'csv';
+       saveDialog.FilterIndex := 1;
+       if saveDialog.Execute then
        begin
-         ShowMessage('StringGrid saved!');
-       end
-       else
-       begin
-         ShowMessage('StringGrid saving Error!');
-       end;
 
+         if ExportToExcel(employeesTable,saveDialog.FileName) then
+         begin
+         ShowMessage('File Successfully Saved !');
+         end
+         else
+         begin
+         ShowMessage('File Saving Error!');
+         end;
+
+       end
+       else ShowMessage('Save file was cancelled');
+
+      saveDialog.Free;
   end;
 
    procedure TuserForm.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -104,6 +118,7 @@ end;
 
   procedure TuserForm.FormCreate(Sender: TObject);
   begin
+
     userForm.employeesTable.ColWidths[0] := 60;
     userForm.employeesTable.ColWidths[5] := 300;
     userForm.employeesTable.Cells[0,0] := 'Id';
@@ -113,7 +128,12 @@ end;
     userForm.employeesTable.Cells[4,0] := 'Department';
     userForm.employeesTable.Cells[5,0] := 'E-mail';
     userForm.fillTable(dbConnection.dbForm.employeesTableQ);
+
+
   end;
+
+
+
   procedure TuserForm.resetFilterButtonClick(Sender: TObject);
 begin
   Self.idBox.Text := '';

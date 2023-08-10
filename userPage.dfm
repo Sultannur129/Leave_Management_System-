@@ -1,7 +1,7 @@
 object userForm: TuserForm
   Left = 0
   Top = 0
-  Caption = 'userForm'
+  Caption = 'User Form'
   ClientHeight = 452
   ClientWidth = 885
   Color = clBtnFace

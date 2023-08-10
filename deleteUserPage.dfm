@@ -1,7 +1,7 @@
 object deleteUser: TdeleteUser
   Left = 0
   Top = 0
-  Caption = 'deleteUser'
+  Caption = 'Delete User'
   ClientHeight = 442
   ClientWidth = 628
   Color = clBtnFace
