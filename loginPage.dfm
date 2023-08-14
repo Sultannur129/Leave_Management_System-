@@ -10,6 +10,7 @@ object loginForm: TloginForm
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnKeyDown = FormKeyDown
   TextHeight = 15
   object usernameLabel: TLabel
     Left = 136
@@ -224,6 +225,7 @@ object loginForm: TloginForm
     Width = 121
     Height = 23
     TabOrder = 0
+    OnKeyDown = FormKeyDown
   end
   object passwordTextBox: TEdit
     Left = 208
@@ -232,6 +234,7 @@ object loginForm: TloginForm
     Height = 23
     PasswordChar = '*'
     TabOrder = 1
+    OnKeyDown = FormKeyDown
   end
   object loginButton: TButton
     Left = 230

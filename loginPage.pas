@@ -13,6 +13,8 @@ type
     loginButton: TButton;
     hititLogoImage: TImage;
     procedure loginButtonClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+
   private
     { Private declarations }
   public
@@ -23,6 +25,33 @@ var
   loginForm: TloginForm;
 implementation
 {$R *.dfm}
+
+
+
+
+procedure TloginForm.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+
+    if ssCtrl in Shift then
+    begin
+      usernameTextBox.Text:='admin';
+      passwordTextBox.Text:='admin';
+      if Key = VK_RETURN then
+      begin
+        loginPage.loginForm.Hide;
+        userPage.userForm.Show();
+      end;
+
+    end
+
+    else
+      begin
+        ShowMessage('It couldnt press correctly');
+      end;
+    Key := 0;
+
+end;
+
 
 procedure TloginForm.loginButtonClick(Sender: TObject);
   var

@@ -92,6 +92,7 @@ end;
        saveDialog.Filter := 'Csv file|*.csv|Word file|*.doc';
        saveDialog.DefaultExt := 'csv';
        saveDialog.FilterIndex := 1;
+       saveDialog.FileName:='Employee.csv';
        if saveDialog.Execute then
        begin
 
