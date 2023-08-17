@@ -2,8 +2,8 @@ object leaveRequestForm: TleaveRequestForm
   Left = 0
   Top = 0
   Caption = 'Leave Request'
-  ClientHeight = 442
-  ClientWidth = 628
+  ClientHeight = 468
+  ClientWidth = 665
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -96,6 +96,7 @@ object leaveRequestForm: TleaveRequestForm
   object startDatePick: TDatePicker
     Left = 412
     Top = 39
+    Height = 41
     Date = 45114.000000000000000000
     DateFormat = 'd/m/yyyy'
     Font.Charset = DEFAULT_CHARSET
@@ -108,6 +109,7 @@ object leaveRequestForm: TleaveRequestForm
   object endDatePick: TDatePicker
     Left = 412
     Top = 99
+    Height = 41
     Date = 45117.000000000000000000
     DateFormat = 'd/m/yyyy'
     Font.Charset = DEFAULT_CHARSET

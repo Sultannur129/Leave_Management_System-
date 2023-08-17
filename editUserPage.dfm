@@ -2,8 +2,8 @@ object editUser: TeditUser
   Left = 0
   Top = 0
   Caption = 'Edit User'
-  ClientHeight = 442
-  ClientWidth = 463
+  ClientHeight = 451
+  ClientWidth = 510
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

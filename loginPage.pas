@@ -46,7 +46,7 @@ begin
 
     else
       begin
-        ShowMessage('It couldnt press correctly');
+        //ShowMessage('It couldnt press correctly');
       end;
     Key := 0;
 
